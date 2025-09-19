@@ -75,3 +75,38 @@ def test_roman_to_int():
 
 if __name__ == "__main__":
     test_roman_to_int()
+
+
+"""
+SOLUTION APPROACH:
+
+Problem: Convert Roman numeral string to integer.
+
+Algorithm: Reverse Iteration with Previous Value Comparison
+1. Create mapping of Roman symbols to values
+2. Start from rightmost character (reverse iteration)
+3. For each character:
+   - If current_value < previous_value: subtract (subtractive notation)
+   - Else: add normally and update previous_value
+
+Why reverse iteration:
+- Roman numerals are built left-to-right with largest values first
+- Subtractive cases (IV, IX, XL, XC, CD, CM) have smaller before larger
+- Processing right-to-left lets us detect when current < previous
+
+Examples:
+- "IV": V(5) + I(1<5, subtract) = 5-1 = 4
+- "VI": I(1) + V(5≥1, add) = 1+5 = 6
+- "MCMXC": C(100) + X(10<100, subtract) + M(1000≥10, add) + C(100<1000, subtract) + M(1000≥100, add)
+           = 100-10+1000-100+1000 = 1990
+
+Key insight: Only update prev_value when adding (not subtracting) because
+subtracted values shouldn't influence future comparisons.
+
+Time Complexity: O(n) - single pass through string
+Space Complexity: O(1) - constant space for mapping and variables
+
+Alternative approaches:
+- Left-to-right with lookahead: More complex logic
+- Replace subtractive patterns first: Multiple string operations
+"""

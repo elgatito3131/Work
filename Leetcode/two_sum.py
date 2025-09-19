@@ -71,3 +71,28 @@ def test_two_sum():
 
 if __name__ == "__main__":
     test_two_sum()
+
+
+"""
+SOLUTION APPROACH:
+
+Problem: Find two numbers in array that sum to target, return their indices.
+
+Algorithm: Hash Map (Dictionary) Lookup
+1. Create empty hash map to store {value: index} pairs
+2. For each element in array:
+   - Calculate complement = target - current_element
+   - Check if complement exists in hash map
+   - If yes: return [hash_map[complement], current_index]
+   - If no: store current_element and its index in hash map
+
+Why this works:
+- We're looking for two numbers: a + b = target
+- When processing 'a', we check if 'b' (complement) was seen before
+- Hash map gives O(1) lookup time vs O(n) for array search
+
+Time Complexity: O(n) - single pass through array
+Space Complexity: O(n) - hash map can store up to n elements
+
+Key insight: Instead of checking all pairs O(n²), we trade space for time
+"""

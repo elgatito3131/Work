@@ -85,3 +85,33 @@ def test_max_profit():
 
 if __name__ == "__main__":
     test_max_profit()
+
+
+"""
+SOLUTION APPROACH:
+
+Problem: Find maximum profit from buying and selling stock once.
+
+Algorithm: Single Pass with Min Price Tracking
+1. Initialize min_price = first price, max_profit = 0
+2. For each subsequent price:
+   - Calculate profit if we sell today: current_price - min_price
+   - Update max_profit if current profit is better
+   - Update min_price if current price is lower (better buy opportunity)
+
+Why this works:
+- We want to buy low and sell high
+- Track the lowest price seen so far (best buy point)
+- For each price, calculate profit if we sold today
+- Keep track of the maximum profit possible
+
+Key insight: We only need to track the minimum price encountered so far,
+not all previous prices, because we want to maximize (sell_price - buy_price)
+
+Time Complexity: O(n) - single pass through array
+Space Complexity: O(1) - only using constant extra variables
+
+Alternative approaches:
+- Brute force: Check all pairs O(n²) - too slow
+- Dynamic programming: Overkill for this problem
+"""
