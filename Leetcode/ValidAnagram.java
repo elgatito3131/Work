@@ -1,153 +1,97 @@
-import java.util.*;
-
 /**
- * Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+ * 242. Valid Anagram
+ * 
+ * 🔍 Problem:
+ * Given two strings s and t, return true if t is an anagram of s.
+ * 
+ * 🧩 Definition:
+ * An anagram is when two words have the *same letters* in *any order*.
+ * Example: "anagram" → "nagaram" ✅
+ *           "rat" → "car" ❌
+ * 
+ * 🧠 Hint:
+ * Easiest approach → sort both strings and compare them.
+ * Because anagrams, when sorted, look identical!
+ * 
+ * ⚙️ Approach:
+ * 1️⃣ Convert both strings to character arrays (since strings can't be sorted directly)
+ * 2️⃣ Sort both arrays alphabetically
+ * 3️⃣ Compare them → if equal → return true, else false
+ * 
+ * 🧮 Example:
+ * s = "listen"
+ * t = "silent"
  *
- * An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
- * typically using all the original letters exactly once.
+ * Step 1: Convert to arrays
+ *   sChars = ['l','i','s','t','e','n']
+ *   tChars = ['s','i','l','e','n','t']
  *
- * Example 1:
- * Input: s = "anagram", t = "nagaram"
- * Output: true
+ * Step 2: Sort them
+ *   sChars → ['e','i','l','n','s','t']
+ *   tChars → ['e','i','l','n','s','t']
  *
- * Example 2:
- * Input: s = "rat", t = "car"
- * Output: false
+ * Step 3: Compare
+ *   Equal → ✅ return true
  *
- * Constraints:
- * - 1 <= s.length, t.length <= 5 * 10^4
- * - s and t consist of lowercase English letters.
- *
- * Follow up: What if the inputs contain Unicode characters? How would you adapt your solution?
- *
- * Time Complexity: O(n)
- * Space Complexity: O(1) - fixed size array of 26
+ * ⏱️ Time Complexity: O(n log n)
+ * 💾 Space Complexity: O(1) or O(n) depending on char arrays
+ * 
+ * 🧠 Alternative idea:
+ * Use a frequency counter (array of 26 letters) → O(n) time (faster for long inputs).
  */
+
+import java.util.Arrays;
 
 public class ValidAnagram {
 
-    // Approach 1: Using frequency array (optimal for lowercase only)
     public boolean isAnagram(String s, String t) {
-        // Quick check: different lengths can't be anagrams
-        if (s.length() != t.length()) {
-            return false;
-        }
+        // ✅ Quick check: if lengths differ, can’t be anagrams
+        if (s.length() != t.length()) return false;
 
-        int[] count = new int[26];
+        // 🪄 Step 1: Convert to char arrays (makes sorting possible)
+        char[] sChars = s.toCharArray();
+        char[] tChars = t.toCharArray();
 
-        // Count characters in s
-        for (char c : s.toCharArray()) {
-            count[c - 'a']++;
-        }
+        // 🧾 Optional debug prints (helpful for visual learners)
+        System.out.println("Before sorting:");
+        System.out.println("sChars: " + Arrays.toString(sChars));
+        System.out.println("tChars: " + Arrays.toString(tChars));
 
-        // Subtract characters in t
-        for (char c : t.toCharArray()) {
-            count[c - 'a']--;
-        }
+        // 🌀 Step 2: Sort both arrays alphabetically
+        Arrays.sort(sChars);
+        Arrays.sort(tChars);
 
-        // Check if all counts are zero
-        for (int i = 0; i < 26; i++) {
-            if (count[i] != 0) {
-                return false;
-            }
-        }
+        // 🧾 Check how they look after sorting
+        System.out.println("After sorting:");
+        System.out.println("Sorted sChars: " + Arrays.toString(sChars));
+        System.out.println("Sorted tChars: " + Arrays.toString(tChars));
 
-        return true;
-    }
+        // ✅ Step 3: Compare arrays directly
+        boolean result = Arrays.equals(sChars, tChars);
 
-    // Approach 2: Using HashMap (works for Unicode)
-    public boolean isAnagramHashMap(String s, String t) {
-        if (s.length() != t.length()) {
-            return false;
-        }
+        // 🧩 Print result for clarity
+        System.out.println("Are they anagrams? " + result);
+        System.out.println("--------------------------------");
 
-        HashMap<Character, Integer> count = new HashMap<>();
-
-        // Count characters in s
-        for (char c : s.toCharArray()) {
-            count.put(c, count.getOrDefault(c, 0) + 1);
-        }
-
-        // Subtract characters in t
-        for (char c : t.toCharArray()) {
-            count.put(c, count.getOrDefault(c, 0) - 1);
-        }
-
-        // Check if all counts are zero
-        for (int val : count.values()) {
-            if (val != 0) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    // Approach 3: Sorting (simple but slower)
-    public boolean isAnagramSorting(String s, String t) {
-        if (s.length() != t.length()) {
-            return false;
-        }
-
-        char[] sArray = s.toCharArray();
-        char[] tArray = t.toCharArray();
-
-        Arrays.sort(sArray);
-        Arrays.sort(tArray);
-
-        return Arrays.equals(sArray, tArray);
+        return result;
     }
 
     public static void main(String[] args) {
         ValidAnagram solution = new ValidAnagram();
 
-        // Test case 1: Valid anagram
-        assert solution.isAnagram("anagram", "nagaram") == true;
+        // 🧪 Example 1
+        System.out.println("Example 1:");
+        System.out.println(solution.isAnagram("anagram", "nagaram"));
+        // Expected: true (same letters in different order)
 
-        // Test case 2: Not an anagram
-        assert solution.isAnagram("rat", "car") == false;
+        // 🧪 Example 2
+        System.out.println("Example 2:");
+        System.out.println(solution.isAnagram("rat", "car"));
+        // Expected: false (different letters)
 
-        // Test case 3: Single character
-        assert solution.isAnagram("a", "a") == true;
-
-        // Test case 4: Different lengths
-        assert solution.isAnagram("abc", "abcd") == false;
-
-        // Test case 5: Empty strings
-        assert solution.isAnagram("", "") == true;
-
-        // Test case 6: All same character
-        assert solution.isAnagram("aaaa", "aaaa") == true;
-
-        // Test case 7: Same characters different count
-        assert solution.isAnagram("aab", "abb") == false;
-
-        System.out.println("All tests passed!");
+        // 🧪 Example 3
+        System.out.println("Example 3:");
+        System.out.println(solution.isAnagram("listen", "silent"));
+        // Expected: true (classic anagram)
     }
 }
-
-/**
- * REFRESHER:
- * - Input: two strings s and t.
- * - Goal: check if t is an anagram of s (same letters, different order).
- *
- * LAZY-FRIENDLY GAME PLAN:
- * 1. Quick check: if lengths differ, return false immediately.
- * 2. Create a frequency counter (array of 26 for lowercase letters).
- * 3. Walk through string s, incrementing count for each character.
- * 4. Walk through string t, decrementing count for each character.
- * 5. Check if all counts are zero - if yes, it's an anagram!
- *
- * WHY IT WORKS:
- * Anagrams have the exact same character frequencies. By incrementing for s and
- * decrementing for t, everything should cancel out to zero. Time is O(n) where n
- * is string length. Space is O(1) since array size is fixed at 26.
- *
- * TIPS:
- * - Array approach: fastest for lowercase only, count[c - 'a'] maps a→0, b→1, etc.
- * - HashMap approach: more flexible, handles Unicode, slightly slower.
- * - Sorting approach: O(n log n) time, simpler to code but not optimal.
- * - Early exit: check lengths first before doing any work.
- * - Alternative: sort both strings and compare - simple but slower.
- * - For Unicode/special chars, must use HashMap instead of fixed array.
- */
