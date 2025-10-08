@@ -34,7 +34,18 @@ import java.util.*;
 public class TwoSum {
 
     public int[] twoSum(int[] nums, int target) {
-        // TODO: Implement solution
+        HashMap<Integer, Integer> meow = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+
+            if (meow.containsKey(nums[i])) {
+                return new int[] {meow.get(nums[i]), i};
+            }
+
+            meow.put(complement, i);
+        }
+
         return new int[] {};
     }
 
