@@ -95,3 +95,63 @@ public class ValidAnagram {
         // Expected: true (classic anagram)
     }
 }
+
+/*
+ * NOTES:
+ *
+ * Time Complexity: O(n log n)
+ * - Converting strings to char arrays: O(n)
+ * - Sorting both arrays: O(n log n) each
+ * - Comparing arrays: O(n)
+ * - Total: O(n log n) dominated by sorting
+ *
+ * Space Complexity: O(n)
+ * - Two char arrays of length n
+ * - Sorting may use additional O(log n) or O(n) space depending on implementation
+ *
+ * Key Insight:
+ * Anagrams contain the exact same characters in different orders.
+ * When sorted alphabetically, anagrams become identical strings!
+ * Example: "listen" → "eilnst", "silent" → "eilnst" ✓
+ *
+ * Alternative Approaches:
+ *
+ * 1. Frequency Counter (FASTER - O(n)):
+ *    Use an array to count frequency of each character
+ *    Time: O(n), Space: O(1) - since only 26 letters
+ *
+ *    if (s.length() != t.length()) return false;
+ *
+ *    int[] count = new int[26];  // For lowercase a-z
+ *
+ *    for (int i = 0; i < s.length(); i++) {
+ *        count[s.charAt(i) - 'a']++;  // Increment for s
+ *        count[t.charAt(i) - 'a']--;  // Decrement for t
+ *    }
+ *
+ *    for (int c : count) {
+ *        if (c != 0) return false;  // Mismatch found
+ *    }
+ *    return true;
+ *
+ * 2. HashMap Approach:
+ *    Similar to frequency counter but works with Unicode characters
+ *    Time: O(n), Space: O(1) - at most 26 entries for lowercase English
+ *
+ *    HashMap<Character, Integer> map = new HashMap<>();
+ *    for (char c : s.toCharArray()) {
+ *        map.put(c, map.getOrDefault(c, 0) + 1);
+ *    }
+ *    for (char c : t.toCharArray()) {
+ *        map.put(c, map.getOrDefault(c, 0) - 1);
+ *    }
+ *    for (int count : map.values()) {
+ *        if (count != 0) return false;
+ *    }
+ *    return true;
+ *
+ * Comparison:
+ * - Sorting: Simple to implement, O(n log n)
+ * - Frequency counter: Fastest, O(n), best for interviews
+ * - HashMap: Most flexible, works with any character set
+ */

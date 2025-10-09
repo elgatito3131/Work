@@ -62,3 +62,72 @@ public class TwoSum {
         System.out.println(Arrays.toString(solution.twoSum(new int[]{3, 3}, 6))); // Expected: [0, 1]
     }
 }
+
+/*
+ * NOTES:
+ *
+ * Time Complexity: O(n)
+ * - Single pass through the array
+ * - HashMap operations (containsKey, get, put) are O(1) average
+ * - Total: O(n) where n is the length of nums
+ *
+ * Space Complexity: O(n)
+ * - HashMap stores at most n elements
+ * - In worst case, we store all elements before finding the pair
+ *
+ * Key Insight:
+ * For each number nums[i], we need to find if (target - nums[i]) exists.
+ * Instead of searching the array again (O(n²)), we use a HashMap to store
+ * complements we've seen, allowing O(1) lookups!
+ *
+ * Algorithm:
+ * For each number:
+ * 1. Check if the number itself exists in the map (meaning we've seen its complement before)
+ * 2. If yes, return [index_of_complement, current_index]
+ * 3. If no, store (target - current_number) → current_index in the map
+ *
+ * Example: nums = [2, 7, 11, 15], target = 9
+ * i=0, num=2:  Check if 2 in map? No. Store (9-2=7) → 0. map = {7: 0}
+ * i=1, num=7:  Check if 7 in map? Yes! Return [map[7]=0, 1] = [0, 1] ✓
+ *
+ * Why store complement instead of the number itself?
+ * Because we want to quickly check: "Have we seen the complement of this number?"
+ * Storing the complement makes the lookup direct.
+ *
+ * Alternative Approaches:
+ *
+ * 1. Brute Force (NOT RECOMMENDED):
+ *    Check every pair of numbers
+ *    Time: O(n²), Space: O(1)
+ *
+ *    for (int i = 0; i < nums.length; i++) {
+ *        for (int j = i + 1; j < nums.length; j++) {
+ *            if (nums[i] + nums[j] == target) {
+ *                return new int[] {i, j};
+ *            }
+ *        }
+ *    }
+ *
+ * 2. Two-Pass HashMap:
+ *    First pass: store all numbers → indices
+ *    Second pass: check if complement exists
+ *    Time: O(n), Space: O(n) - but requires 2 passes
+ *
+ *    HashMap<Integer, Integer> map = new HashMap<>();
+ *    for (int i = 0; i < nums.length; i++) {
+ *        map.put(nums[i], i);
+ *    }
+ *    for (int i = 0; i < nums.length; i++) {
+ *        int complement = target - nums[i];
+ *        if (map.containsKey(complement) && map.get(complement) != i) {
+ *            return new int[] {i, map.get(complement)};
+ *        }
+ *    }
+ *
+ * 3. Sorting + Two Pointers:
+ *    Sort array, use two pointers from both ends
+ *    Time: O(n log n), Space: O(n) - but loses original indices!
+ *    Need to track original indices separately
+ *
+ * The one-pass HashMap approach (current solution) is optimal for this problem!
+ */

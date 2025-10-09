@@ -1,12 +1,22 @@
 # NeetCode 150 - Progress Tracker
 
+**Progress: 5/150 problems completed (3.3%)**
+
+🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ (1-30)
+⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ (31-60)
+⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ (61-90)
+⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ (91-120)
+⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ (121-150)
+
+---
+
 ## 1. Arrays & Hashing (9 problems)
 1. Contains Duplicate ✅
 2. Valid Anagram ✅
 3. Two Sum ✅
 4. Group Anagrams
 5. Top K Frequent Elements
-6. Product of Array Except Self
+6. Product of Array Except Self ✅
 7. Valid Sudoku
 8. Encode and Decode Strings
 9. Longest Consecutive Sequence ✅
@@ -187,8 +197,5 @@
 7. Reverse Integer
 
 ---
-
-**Total: 150 problems across 18 patterns**
-**Completed: 4/150**
 
 Find all problems with video explanations at [neetcode.io](https://neetcode.io/practice)

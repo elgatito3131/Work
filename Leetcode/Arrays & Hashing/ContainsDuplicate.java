@@ -34,18 +34,77 @@ import java.util.*;
 public class ContainsDuplicate {
 
     public boolean containsDuplicate(int[] nums) {
-        // 🪣 Step 1: Create a set for unique elements
         HashSet<Integer> set = new HashSet<>();
 
-        // 🌀 Step 2: Loop through numbers and add them to the set
         for (int num : nums) {
-            set.add(num); // duplicates automatically ignored
-            System.out.println("Adding " + num + " → " + set);
+            set.add(num);
         }
 
-        // 🧾 Step 3: Print lengths to visualize
-        System.out.println("Array length: " + nums.length);
-        System.out.println("Set size: " + set.size());
+        return set.size() < nums.length;
+    }
 
-        // ✅ Step 4: Compare
-        boolean hasDuplicate = set.size() <
+    public static void main(String[] args) {
+        ContainsDuplicate solution = new ContainsDuplicate();
+
+        // Test case 1
+        int[] nums1 = {1, 2, 3, 1};
+        System.out.println("Test 1: " + solution.containsDuplicate(nums1)); // Expected: true
+
+        // Test case 2
+        int[] nums2 = {1, 2, 3, 4};
+        System.out.println("Test 2: " + solution.containsDuplicate(nums2)); // Expected: false
+
+        // Test case 3
+        int[] nums3 = {1, 1, 1, 3, 3, 4, 3, 2, 4, 2};
+        System.out.println("Test 3: " + solution.containsDuplicate(nums3)); // Expected: true
+    }
+}
+
+/*
+ * NOTES:
+ *
+ * Time Complexity: O(n)
+ * - We iterate through the array once to add all elements to the HashSet
+ * - HashSet.add() is O(1) on average
+ * - Total: O(n) where n is the length of the array
+ *
+ * Space Complexity: O(n)
+ * - In the worst case (no duplicates), the HashSet will contain all n elements
+ * - HashSet stores references to Integer objects
+ *
+ * Key Insight:
+ * A HashSet automatically ignores duplicate values. When you try to add
+ * a duplicate, it simply doesn't add it again. So if the final set size
+ * is smaller than the array length, duplicates must exist!
+ *
+ * Alternative Approaches:
+ *
+ * 1. Early Return Optimization (Better):
+ *    Instead of adding all elements then comparing sizes, check during addition
+ *    Time: O(n), Space: O(n) - but faster in practice
+ *
+ *    for (int num : nums) {
+ *        if (set.contains(num)) {
+ *            return true;  // Found duplicate immediately!
+ *        }
+ *        set.add(num);
+ *    }
+ *    return false;
+ *
+ * 2. Sorting Approach:
+ *    Sort array, then check adjacent elements for duplicates
+ *    Time: O(n log n), Space: O(1) or O(n) depending on sort algorithm
+ *
+ *    Arrays.sort(nums);
+ *    for (int i = 1; i < nums.length; i++) {
+ *        if (nums[i] == nums[i - 1]) {
+ *            return true;
+ *        }
+ *    }
+ *    return false;
+ *
+ * 3. Brute Force (NOT RECOMMENDED):
+ *    Nested loops comparing every pair
+ *    Time: O(n²), Space: O(1)
+ *    Too slow for large inputs
+ */
