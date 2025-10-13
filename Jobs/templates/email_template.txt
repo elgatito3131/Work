@@ -1,0 +1,17 @@
+Subject: {{Company}} — {{RoleTitle}} application
+
+Hi {{Name}},
+
+I just applied to {{RoleTitle}} at {{Company}} (req/link: {{URL}}). My background in {{Tech/Domain}} and recent work on {{Project/Impact}} aligns with your JD. Would you be open to a brief chat this week?
+
+Thanks,
+{{YourName}}
+{{LinkedIn/GitHub}}
+
+-- Follow-up (after 5–7 business days) --
+Hi {{Name}},
+Checking in regarding my application for {{RoleTitle}}. I’d still love to contribute to {{Team/Goal}} and can share more about {{SpecificAchievement}}.
+
+Best,
+{{YourName}}
+
