@@ -1,27 +1,23 @@
 # NeetCode 150 - Progress Tracker
 
-**Progress: 7/150 problems completed (4.7%)**
-
-🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ (1-30)
-⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ (31-60)
-⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ (61-90)
-⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ (91-120)
-⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ (121-150)
+**Overall Progress: 8/150 problems completed (5.3%)**
 
 ---
 
 ## 1. Arrays & Hashing (9 problems)
+🟩🟩🟩🟩🟩🟩🟩🟩⬜ **8/9 complete (88.9%)**
 1. Contains Duplicate ✅
 2. Valid Anagram ✅
 3. Two Sum ✅
 4. Group Anagrams
-5. Top K Frequent Elements
+5. Top K Frequent Elements ✅
 6. Product of Array Except Self ✅
 7. Valid Sudoku ✅
 8. Encode and Decode Strings ✅
 9. Longest Consecutive Sequence ✅
 
 ## 2. Two Pointers (5 problems)
+⬜⬜⬜⬜⬜ **0/5 complete (0%)**
 1. Valid Palindrome
 2. Two Sum II - Input Array Is Sorted
 3. 3Sum
@@ -29,6 +25,7 @@
 5. Trapping Rain Water
 
 ## 3. Sliding Window (6 problems)
+⬜⬜⬜⬜⬜⬜ **0/6 complete (0%)**
 1. Best Time to Buy and Sell Stock
 2. Longest Substring Without Repeating Characters
 3. Longest Repeating Character Replacement
@@ -37,6 +34,7 @@
 6. Sliding Window Maximum
 
 ## 4. Stack (7 problems)
+⬜⬜⬜⬜⬜⬜⬜ **0/7 complete (0%)**
 1. Valid Parentheses
 2. Min Stack
 3. Evaluate Reverse Polish Notation
@@ -46,6 +44,7 @@
 7. Largest Rectangle in Histogram
 
 ## 5. Binary Search (7 problems)
+⬜⬜⬜⬜⬜⬜⬜ **0/7 complete (0%)**
 1. Binary Search
 2. Search a 2D Matrix
 3. Koko Eating Bananas
@@ -55,6 +54,7 @@
 7. Median of Two Sorted Arrays
 
 ## 6. Linked List (11 problems)
+⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ **0/11 complete (0%)**
 1. Reverse Linked List
 2. Merge Two Sorted Lists
 3. Reorder List
@@ -68,6 +68,7 @@
 11. Reverse Nodes in k-Group
 
 ## 7. Trees (15 problems)
+⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ **0/15 complete (0%)**
 1. Invert Binary Tree
 2. Maximum Depth of Binary Tree
 3. Diameter of Binary Tree
@@ -85,11 +86,13 @@
 15. Serialize and Deserialize Binary Tree
 
 ## 8. Tries (3 problems)
+⬜⬜⬜ **0/3 complete (0%)**
 1. Implement Trie (Prefix Tree)
 2. Design Add and Search Words Data Structure
 3. Word Search II
 
 ## 9. Heap / Priority Queue (7 problems)
+⬜⬜⬜⬜⬜⬜⬜ **0/7 complete (0%)**
 1. Kth Largest Element in a Stream
 2. Last Stone Weight
 3. K Closest Points to Origin
@@ -99,6 +102,7 @@
 7. Find Median from Data Stream
 
 ## 10. Backtracking (9 problems)
+⬜⬜⬜⬜⬜⬜⬜⬜⬜ **0/9 complete (0%)**
 1. Subsets
 2. Combination Sum
 3. Permutations
@@ -110,6 +114,7 @@
 9. N-Queens
 
 ## 11. Graphs (13 problems)
+⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ **0/13 complete (0%)**
 1. Number of Islands
 2. Clone Graph
 3. Max Area of Island
@@ -125,6 +130,7 @@
 13. Word Ladder
 
 ## 12. Advanced Graphs (6 problems)
+⬜⬜⬜⬜⬜⬜ **0/6 complete (0%)**
 1. Reconstruct Itinerary
 2. Min Cost to Connect All Points
 3. Network Delay Time
@@ -133,6 +139,7 @@
 6. Cheapest Flights Within K Stops
 
 ## 13. 1-D Dynamic Programming (12 problems)
+⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ **0/12 complete (0%)**
 1. Climbing Stairs
 2. Min Cost Climbing Stairs
 3. House Robber
@@ -147,6 +154,7 @@
 12. Partition Equal Subset Sum
 
 ## 14. 2-D Dynamic Programming (11 problems)
+⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ **0/11 complete (0%)**
 1. Unique Paths
 2. Longest Common Subsequence
 3. Best Time to Buy and Sell Stock with Cooldown
@@ -160,6 +168,7 @@
 11. Regular Expression Matching
 
 ## 15. Greedy (8 problems)
+⬜⬜⬜⬜⬜⬜⬜⬜ **0/8 complete (0%)**
 1. Maximum Subarray
 2. Jump Game
 3. Jump Game II
@@ -170,6 +179,7 @@
 8. Valid Parenthesis String
 
 ## 16. Intervals (6 problems)
+⬜⬜⬜⬜⬜⬜ **0/6 complete (0%)**
 1. Insert Interval
 2. Merge Intervals
 3. Non-overlapping Intervals
@@ -178,6 +188,7 @@
 6. Minimum Interval to Include Each Query
 
 ## 17. Math & Geometry (8 problems)
+⬜⬜⬜⬜⬜⬜⬜⬜ **0/8 complete (0%)**
 1. Rotate Image
 2. Spiral Matrix
 3. Set Matrix Zeroes
@@ -188,6 +199,7 @@
 8. Detect Squares
 
 ## 18. Bit Manipulation (7 problems)
+⬜⬜⬜⬜⬜⬜⬜ **0/7 complete (0%)**
 1. Single Number
 2. Number of 1 Bits
 3. Counting Bits
