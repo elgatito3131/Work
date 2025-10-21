@@ -1,6 +1,6 @@
 # NeetCode 150 - Progress Tracker
 
-**Overall Progress: 12/150 problems completed (8%)**
+**Overall Progress: 13/150 problems completed (8.7%)**
 
 ---
 
@@ -17,12 +17,12 @@
 9. Longest Consecutive Sequence ✅
 
 ## 2. Two Pointers (5 problems)
-🟩🟩🟩⬜⬜ **3/5 complete (60%)**
+🟩🟩🟩🟩⬜ **4/5 complete (80%)**
 1. Valid Palindrome ✅
 2. Two Sum II - Input Array Is Sorted ✅
 3. 3Sum ✅
 4. Container With Most Water
-5. Trapping Rain Water
+5. Trapping Rain Water ✅
 
 ## 3. Sliding Window (6 problems)
 ⬜⬜⬜⬜⬜⬜ **0/6 complete (0%)**
