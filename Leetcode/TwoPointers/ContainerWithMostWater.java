@@ -19,7 +19,7 @@ import java.util.Arrays;
  * Explanation: The vertical lines are at indices 1 and 8.
  * Width = 8 - 1 = 7
  * Height = min(8, 7) = 7
- * Area = 7 * 7 = 49
+ * Area = 7 * 7 = 49m
  *
  * Example 2:
  * Input: height = [1,1]
@@ -33,8 +33,35 @@ import java.util.Arrays;
 
 public class ContainerWithMostWater {
     public int maxArea(int[] height) {
-        // TODO: Implement solution
-        return 0;
+        // Two Pointers Approach
+        // Start with pointers at both ends (maximum width)
+        int left = 0;
+        int right = height.length - 1;
+        int maxArea = 0;
+
+        // Main loop: process until pointers meet
+        while (left < right) {
+            // Calculate current area
+            // Width = distance between pointers
+            // Height = minimum of the two bars (water level limited by shorter bar)
+            int width = right - left;
+            int minHeight = Math.min(height[left], height[right]);
+            int currentArea = width * minHeight;
+
+            // Update maxArea if current area is larger
+            maxArea = Math.max(maxArea, currentArea);
+
+            // Move the pointer with the shorter bar inward
+            // This is because moving the taller bar can only decrease area
+            // (width decreases, height can't increase because it's limited by the shorter bar)
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+
+        return maxArea;
     }
 
     public static void main(String[] args) {
