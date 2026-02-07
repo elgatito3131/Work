@@ -119,3 +119,45 @@ Academic Honors:
 Employment Status: READY FOR PROFESSIONAL CS ROLES
 (See target_positions.txt for detailed career options and salary ranges)
 ═══════════════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════════════
+📁 ACADEMIC PROJECTS SUMMARY
+═══════════════════════════════════════════════════════════════
+
+**CS 471 — Operating Systems**
+- Implemented Unix system calls (fork, exec, waitpid, exit) in OS/161
+- Built mutex locks and traffic intersection simulator with deadlock prevention
+
+**CS 455 — Computer Communications and Networking**
+- Implemented MTP (Mason Transport Protocol) over UDP in Python
+- Built sliding window, CRC32 checksums, timeout/retransmission logic
+
+**CS 468 — Secure Programming**
+- Implemented RSA encryption, digital signatures, X.509 certificate verification
+- PKI lab: created Certificate Authority, deployed HTTPS, demonstrated MITM attacks
+
+**CS 450 — Database Concepts**
+- Designed movie database: EER → relational schema → Oracle SQL
+- Built Java JDBC command-line app for queries and CSV insertion
+- MongoDB aggregation queries with $unwind and $group
+
+**CS 367 — Computer Systems and Programming**
+- CPU scheduler in C with priority scheduling, aging, starvation prevention
+- Custom 11-bit floating-point library (encoding, decoding, arithmetic)
+- Unix task monitor shell with fork/exec, signals, file redirection, pipes
+
+**CS 321 — Software Engineering**
+- Fantasy football web app (team of 4, Agile)
+- Backend: Node.js API endpoints, user authentication, database schema
+
+**CS 310 — Data Structures**
+- Dynamic arrays, doubly linked lists, stacks, hash maps (separate chaining)
+- K-ary trees, First-Child-Next-Sibling trees, open-addressing hash tables
+- Directed graphs with adjacency matrix, priority queue with decrease-key
+- Topological sorting (Kahn's algorithm) with GUI simulator
+
+**CS 262 — Intro to Low-level Programming**
+- HorseDiceCipher: dice game with Vigenère cipher in C
+- Jerry's Cheesey Search: maze solver with iterative/recursive pathfinding
+- CS262 Shell: Unix shell with fork/exec, linked list history, built-in commands
+
+═══════════════════════════════════════════════════════════════

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.ben.optionsanalyzer</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/elgatomacmain/Desktop/Ben/Work/OptionsAnalyzer/options_analyzer.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/elgatomacmain/Desktop/Ben/Work/OptionsAnalyzer</string>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key>
+        <integer>5</integer>
+        <key>Hour</key>
+        <integer>17</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/elgatomacmain/Desktop/Ben/Work/OptionsAnalyzer/logs/output.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/elgatomacmain/Desktop/Ben/Work/OptionsAnalyzer/logs/error.log</string>
+</dict>
+</plist>
